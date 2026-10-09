@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 330" role="img" aria-labelledby="title desc">
+  <title id="title">GPU 训练平台端到端依赖关系</title>
+  <desc id="desc">从服务器、网络和存储，经 Kubernetes 与 GPU 资源管理，到分布式训练作业的依赖链。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#45545c"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="330" fill="#f6f8f8"/>
+  <text x="40" y="48" font-family="sans-serif" font-size="23" font-weight="700" fill="#18262d">GPU 训练平台：基础设施到作业的依赖链</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g>
+      <rect x="40" y="102" width="230" height="150" rx="7" fill="#e5f1ef" stroke="#157a72" stroke-width="2"/>
+      <text x="155" y="139" font-size="20" font-weight="700" fill="#145d57">基础设施</text>
+      <text x="155" y="177" font-size="15" fill="#26373d">GPU 服务器 · NUMA</text>
+      <text x="155" y="204" font-size="15" fill="#26373d">IB / RoCE · 训练存储</text>
+      <text x="155" y="231" font-size="13" fill="#52636a">硬件与链路健康</text>
+    </g>
+    <g>
+      <rect x="330" y="102" width="230" height="150" rx="7" fill="#e7eff8" stroke="#376b9b" stroke-width="2"/>
+      <text x="445" y="139" font-size="20" font-weight="700" fill="#2a5278">Kubernetes</text>
+      <text x="445" y="177" font-size="15" fill="#26373d">控制面 · 节点</text>
+      <text x="445" y="204" font-size="15" fill="#26373d">CNI · CSI · Runtime</text>
+      <text x="445" y="231" font-size="13" fill="#52636a">编排与资源分配</text>
+    </g>
+    <g>
+      <rect x="620" y="102" width="230" height="150" rx="7" fill="#fff1d9" stroke="#bd7916" stroke-width="2"/>
+      <text x="735" y="139" font-size="20" font-weight="700" fill="#87540f">GPU 资源层</text>
+      <text x="735" y="177" font-size="15" fill="#26373d">Driver · Device Plugin</text>
+      <text x="735" y="204" font-size="15" fill="#26373d">GPU Operator · DCGM</text>
+      <text x="735" y="231" font-size="13" fill="#52636a">发现、分配与观测</text>
+    </g>
+    <g>
+      <rect x="910" y="102" width="170" height="150" rx="7" fill="#fbe8e6" stroke="#bc554b" stroke-width="2"/>
+      <text x="995" y="139" font-size="20" font-weight="700" fill="#8e3933">训练作业</text>
+      <text x="995" y="177" font-size="15" fill="#26373d">PyTorch · NCCL</text>
+      <text x="995" y="204" font-size="15" fill="#26373d">调度 · 检查点</text>
+      <text x="995" y="231" font-size="13" fill="#52636a">性能与恢复</text>
+    </g>
+    <path d="M270 177 H319" fill="none" stroke="#45545c" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M560 177 H609" fill="none" stroke="#45545c" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M850 177 H899" fill="none" stroke="#45545c" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+  <text x="40" y="295" font-family="sans-serif" font-size="14" fill="#52636a">排障时从作业症状沿依赖关系向下验证；每一层都要保留可观测证据和恢复责任边界。</text>
+</svg>

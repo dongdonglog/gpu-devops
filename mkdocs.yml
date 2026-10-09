@@ -1,0 +1,68 @@
+site_name: GPU Kubernetes 训练集群运维
+site_description: 面向生产环境的 GPU Kubernetes 集群学习与实践手册
+site_author: AI DevOps Book
+docs_dir: docs
+strict: true
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色模式
+    - scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色模式
+
+nav:
+  - 首页: index.md
+  - 第一部分 基础环境:
+      - 第 1 章 岗位能力地图: chapters/ch01.md
+      - 第 2 章 Linux 与 GPU 服务器: chapters/ch02.md
+      - 第 3 章 Kubernetes 运维: chapters/ch03.md
+      - 第 4 章 GPU 容器环境: chapters/ch04.md
+  - 第二部分 GPU 训练依赖:
+      - 第 5 章 NVIDIA GPU 软件栈: chapters/ch05.md
+      - 第 6 章 Kubernetes GPU 资源: chapters/ch06.md
+      - 第 7 章 IB/RoCE 与 RDMA: chapters/ch07.md
+      - 第 8 章 分布式训练通信: chapters/ch08.md
+      - 第 9 章 训练存储: chapters/ch09.md
+  - 第三部分 生产运维:
+      - 第 10 章 调度与容量规划: chapters/ch10.md
+      - 第 11 章 生产故障诊断: chapters/ch11.md
+      - 第 12 章 可观测性与自动化: chapters/ch12.md
+      - 第 13 章 变更和值班: chapters/ch13.md
+      - 第 14 章 综合演练: chapters/ch14.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
